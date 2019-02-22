@@ -11,8 +11,8 @@ can be found at https://gitweb.torproject.org/pluggable-transports/snowflake.git
 
 ## Introduction
 
-The Snowflake Broker is responsible for handing out proxies to clients that is
-requesting them. The client will connect using "domain fronted HTTP" and
+The Snowflake Broker is responsible for handing out proxies to clients that
+request them. The client connects using "domain fronted HTTP" and
 exchanges WebRTC Session Descriptor documents. The WebRTC Session Descriptor
 documents are small text documents describing how two or more WebRTC peers can
 reach each other. The Snowflake client will then use the Session Descriptor to
@@ -29,11 +29,11 @@ document can be found at https://webrtchacks.com/sdp-anatomy/
 
 ## Go Dependencies
 
-The broker only have one external dependency and does not depend on any PT
+The broker only has one external dependency and does not depend on any PT
 related libraries such as `goptlib` since it's a standalone application and is
 not executed via, for example, Tor like PT client and bridges are.
 
-The current external dependencies of the Snowflake Broker is:
+The current external dependency of the Snowflake Broker is:
 
 - `autocert` (https://godoc.org/golang.org/x/crypto/acme/autocert) - autocert
   is an implementation of the ACME protocol used to get Let's Encrypt validated
@@ -48,7 +48,7 @@ Broker codebase.
 
 ### The HTTP interface
 
-When the Broker is started it exposes an HTTP API available on port 443 by via
+When the Broker is started it exposes an HTTP API available on port 443 via
 HTTPS. The Broker is responsible for fetching a TLS certificate from Let's
 Encrypt using the hostname and email address given on the command line
 parameters. You can optionally start the Broker where it listens on plain text
@@ -90,7 +90,7 @@ available.
 #### The `/client` handler
 
 The `/client` handler is used by Snowflake clients to send their WebRTC Session
-Descriptor Offer in the hope of receiving an Session Descriptor Answer from the
+Descriptor Offer in the hope of receiving a Session Descriptor Answer from the
 proxy (the proxy calls the `/answer` HTTP handler). The available Snowflake
 proxies (see the description of the Snowflake Heap) is the set of proxies that
 are currently polling the `/proxy` handler.
@@ -135,7 +135,7 @@ Snowflake Proxy and pass the Session Descriptor Offer to it.
 
 ### Metrics
 
-The Snowflake broker have an interface for collecting some internal metrics.
+The Snowflake broker has an interface for collecting some internal metrics.
 Currently only the `clientRoundtripEstimate` metric is implemented.
 
 - `clientRoundtripEstimate`: stores the round trip time between the Session
