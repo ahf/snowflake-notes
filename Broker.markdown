@@ -85,9 +85,9 @@ connectivity between the client and the proxy. Snowflake clients uses the
 `/client` HTTP handler to submit their Session Descriptor Offer.
 
 If no clients becomes available to the Broker while the proxy is waiting a
-timeout will be reached and the broker responds with a `504 Gateway Timeout`
-HTTP error code. The proxy can reconnect again until a Snowflake client is
-available.
+timeout (10 seconds) will be reached and the broker responds with a `504
+Gateway Timeout` HTTP error code. The proxy can reconnect again until a
+Snowflake client is available.
 
 #### The `/client` handler
 
@@ -101,8 +101,8 @@ If the proxy responds (to the `/answer` handler) with a WebRTC Session
 Descriptor Answer the content is passed to the client allowing the client and
 proxy to establish connectivity between each other using WebRTC.
 
-If the Snowflake proxy does not respond a timeout is reached and the client
-will receive a `504 Gateway Timeout` HTTP error code.
+If the Snowflake proxy does not respond a timeout (10 seconds) is reached and
+the client will receive a `504 Gateway Timeout` HTTP error code.
 
 #### The `/answer` handler
 
