@@ -112,8 +112,9 @@ WebRTC Session Descriptor Answer. The broker will then pass the answer to the
 client that is currently polling for the answer in the `/client` handler.
 
 If the Snowflake proxy was too slow to send its offer the broker will respond
-with a `410 Gone` HTTP error code. If the proxy responds with an empty or
-otherwise bogus answer the `400 Bad Request` HTTP error code is returned.
+with a `410 Gone` HTTP error code. If the proxy responds with an empty or an
+otherwise bogus answer (invalid request body) the `400 Bad Request` HTTP error
+code is returned.
 
 #### The `/robots.txt` handler
 
