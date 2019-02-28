@@ -41,6 +41,8 @@ The current external dependency of the Snowflake Broker is:
   using the hostname of the broker instance as well as an email address of the
   administrator.
 
+
+
 ## Implementation Details
 
 This section tries to outline some implementation details of the Snowflake
@@ -123,7 +125,8 @@ This handler is used to serve a `robots.txt` file with the following content:
 Which allow web crawlers to crawl everything on the site. For more information
 about this please have a look at https://moz.com/learn/seo/robotstxt
 
-FIXME(ahf): Is this really correct? Shouldn't we disallow crawling?
+See bug #29565 for information about why this is wrong. It should be `Disallow:
+/`.
 
 ### The Heap
 
