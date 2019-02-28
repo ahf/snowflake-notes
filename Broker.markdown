@@ -141,5 +141,6 @@ Snowflake Proxy and pass the Session Descriptor Offer to it.
 The Snowflake broker has an interface for collecting some internal metrics.
 Currently only the `clientRoundtripEstimate` metric is implemented.
 
-- `clientRoundtripEstimate`: stores the round trip time between the Session
-  Descriptor Offer is given to the client and an answer is received.
+- `clientRoundtripEstimate`: stores the round trip time (in milliseconds)
+  between the Session Descriptor Offer is given to the client and an answer is
+  received.
