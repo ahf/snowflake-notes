@@ -41,7 +41,7 @@ The current external dependency of the Snowflake Broker is:
   using the hostname of the broker instance as well as an email address of the
   administrator.
 
-
+Go itself need to be (at least) version 1.10.
 
 ## Implementation Details
 
