@@ -89,6 +89,8 @@ timeout (10 seconds) will be reached and the broker responds with a `504
 Gateway Timeout` HTTP error code. The proxy can reconnect again until a
 Snowflake client is available.
 
+The `X-Session-ID` header must contain the Snowflake proxy WebRTC ID.
+
 #### The `/client` handler
 
 The `/client` handler is used by Snowflake clients to send their WebRTC Session
@@ -115,6 +117,8 @@ If the Snowflake proxy was too slow to send its offer the broker will respond
 with a `410 Gone` HTTP error code. If the proxy responds with an empty or an
 otherwise bogus answer (invalid request body) the `400 Bad Request` HTTP error
 code is returned.
+
+The `X-Session-ID` header must contain the Snowflake proxy WebRTC ID.
 
 #### The `/robots.txt` handler
 
