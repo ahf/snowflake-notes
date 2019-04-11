@@ -15,6 +15,7 @@ Notes:
    Tor process?
 2. Should the client be able to specify which bridge (from a closed set) the
    proxy should use?
+3. Should there be some kind of heartbeat protocol to find out whether the connection is still alive?
 
 Related tickets:
 - https://trac.torproject.org/projects/tor/ticket/25429
